@@ -1,0 +1,1065 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="ru">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>default title</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta content="telephone=no" name="format-detection">
+        <!-- This make sence for mobile browsers. It means, that content has been optimized for mobile browsers -->
+        <meta name="HandheldFriendly" content="true">
+
+
+        <!--[if (gt IE 9)|!(IE)]><!-->
+        <link href="{% static '/css/main.css' %}" rel="stylesheet" type="text/css">
+        <!--<![endif]-->
+
+        <meta property="og:title" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:description" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="500" />
+        <meta property="og:image:height" content="300" />
+        <meta property="twitter:description" content="" />
+        <link rel="image_src" href="" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <script>
+            (function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)
+        </script>
+
+
+        <script src="{% static '/js/separate-js/svg-inject.js' %}"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9.2.4/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/imask@6.6.0/dist/imask.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/imask@6.6.1/dist/imask.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9.2.4/swiper-bundle.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+    </head>
+
+    <body class="page">
+
+
+        <div class="page__wrapper">
+
+            <section class="page-header">
+                <div class="container-fluid top-panel-wrapper">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row top-panel">
+                                <div class="col-auto city-choice">
+                                    Ваш город: <a href="#" class="link-dotted" data-bs-toggle="modal" data-bs-target="#cityModal">Краснодар</a>
+                                </div>
+                                <div class="col-auto city-address d-lg-block d-none">
+                                    Адрес: <span class="text-info">ул. Захарова 10 корпус 8 (территория завода им.Седина).</span>  <span class="city-address__schedule">пн.-сб.: 9:00-20:00</span>
+                                </div>
+                                <div class="col d-sm-block d-none">
+                                    <nav class="nav top-panel__nav justify-content-end">
+                                        <a class="nav-link" href="#">Сертификаты</a>
+                                        <a class="nav-link" href="#">Лицензии</a>
+                                        <a class="nav-link" href="#">Оплата</a>
+                                        <a class="nav-link" href="#">Доставка</a>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="common-header-wrapper">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <nav class="navbar navbar-dark navbar-expand-lg">
+                                    <a class="navbar-brand py-0" href="{% url 'home_page' %}">
+                                        <svg class="navbar-brand__icon">
+                                            <use xlink:href="#logo"></use>
+                                        </svg>
+                                        <span class="navbar-brand__name d-xxl-block d-lg-none d-block">
+                                    <span class="d-block">Завод резервуаров</span><span class="d-block">ёмкостного оборудования</span>
+                                        </span>
+                                    </a>
+                                    <div class="vr ms-4 me-3 d-xxl-block d-none"></div>
+                                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse main-menu" id="navbarMain">
+                                        <ul class="navbar-nav mb-lg-0 mb-3">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{% url 'about_us' %}">О заводе</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Каталог</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Проектирование</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Опросные листы</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link nav-link_marked" href="#">Калькулятор</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
+                                            </li>
+                                        </ul>
+                                        <div class="d-sm-none d-block border-top border-secondary pt-3 mb-4">
+                                            <nav class="nav vstack">
+                                                <a class="nav-link" href="#">Сертификаты</a>
+                                                <a class="nav-link" href="#">Лицензии</a>
+                                                <a class="nav-link" href="#">Оплата</a>
+                                                <a class="nav-link" href="#">Доставка</a>
+                                            </nav>
+                                        </div>
+                                        <div class="vr me-4 ms-3 d-lg-block d-none"></div>
+                                        <div class="head-contacts mb-lg-0 mb-4">
+                                            <div class="head-phone">
+                                                <div class="head-phone__icon">
+                                                    <svg>
+                                                        <use xlink:href="#phone"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="head-phone__content">
+                                                    <div class="head-phone__num text-nowrap"><a href="tel:+79180010244" class="text-white text-decoration-none">+7 918 001-02-44</a>
+                                                    </div>
+                                                    <div class="head-phone__link"><a href="" data-bs-toggle="modal" data-bs-target="#cityModal">Заказать звонок</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="head-mail d-xxl-flex d-lg-none d-flex justify-content-start">
+                                                <div class="head-mail__icon">
+                                                    <svg>
+                                                        <use xlink:href="#mail"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="head-mail__content">
+                                                    <a href="mailto:info@emrez.ru">info@emrez.ru</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-danger border-0 ms-auto" type="submit">Запросить цену</button>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container index-intro-wrapper">
+                        <div class="row">
+                            <div class="col">
+                                <div class="index-intro overflow-hidden">
+                                    <div class="index-intro__pic">
+                                        <div class="index-intro__content">
+                                            <h1 class="index-intro__title">
+                                        Производство резервуаров <span class="d-block">и ёмкостного оборудования</span>
+                                    </h1>
+                                            <div class="index-intro__descr">
+                                                Изготовление от&nbsp;20&nbsp;дней. Срок службы изделия более 20&nbsp;лет. Расширенная гарантия. Доставка по&nbsp;РФ, СНГ и&nbsp;Европе.
+                                            </div>
+                                            <div class="index-intro__btn">
+                                                <a href="#" class="btn btn-danger">Получить рассчет и коммерческое предложение</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row g-0 adv-list row-cols-xl-4 row-cols-sm-2">
+                                        <div class="col-sm col-12 border-end border-bottom">
+                                            <div class="adv-item">
+                                                <div class="adv-item__icon">
+                                                    <svg>
+                                                        <use xlink:href="#adv4"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="adv-item__content">
+                                                    <div class="adv-item__title">Своё производство</div>
+                                                    <div class="adv-item__text">Поставка напрямую с&nbsp;завода, без посредников</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm col-12 border-end border-bottom">
+                                            <div class="adv-item">
+                                                <div class="adv-item__icon">
+                                                    <svg>
+                                                        <use xlink:href="#adv2"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="adv-item__content">
+                                                    <div class="adv-item__title">Все типы резервуаров</div>
+                                                    <div class="adv-item__text">Под любые жидкости и&nbsp;сыпучие материалы</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm col-12 border-end border-bottom">
+                                            <div class="adv-item">
+                                                <div class="adv-item__icon">
+                                                    <svg>
+                                                        <use xlink:href="#adv3"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="adv-item__content">
+                                                    <div class="adv-item__title">Производство полного цикла</div>
+                                                    <div class="adv-item__text">Комплексное строительство нефтегазовых объектов &laquo;под ключ&raquo;</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm col-12 border-end border-bottom">
+                                            <div class="adv-item">
+                                                <div class="adv-item__icon">
+                                                    <svg>
+                                                        <use xlink:href="#adv1"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="adv-item__content">
+                                                    <div class="adv-item__title">Производственные мощности</div>
+                                                    <div class="adv-item__text">Производственные цеха завода занимают площадь более 9600м<sup>2</sup>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-part page-part_white page-part_index-first">
+                <div class="container">
+                    <div class="row align-items-center mb-2">
+                        <div class="col">
+                            <h2>Каталог резервуаров и ёмкостей</h2>
+                        </div>
+                        <div class="col-auto d-sm-block d-none">
+                            <a href="#">Открыть каталог</a>
+                        </div>
+                    </div>
+                    <div class="row index-catalog-cards row-cols-lg-4 row-cols-sm-3 row-cols-2 g-lg-4 g-sm-3 g-2 mb-5">
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme1">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic1.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Горизонтальные резервуары
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme1">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic2.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Вертикальные резервуары
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme1">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic3.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Пожарные резервуары
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme1">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic4.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Емкости ЕП и ЕПП
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme1">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic2.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Вертикальные резервуары
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme1">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic5.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Вертикальные резервуары
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme1">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic2.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Вертикальные резервуары
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme1">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic1.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Вертикальные резервуары
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme1">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic4.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Вертикальные резервуары
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme1">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic1.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Вертикальные резервуары
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme1">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic3.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Вертикальные резервуары
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme1">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic2.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Вертикальные резервуары
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-2">
+                        <div class="col">
+                            <h2>Каталог автозаправочных станций</h2>
+                        </div>
+                        <div class="col-auto d-sm-block d-none">
+                            <a href="#">Открыть каталог</a>
+                        </div>
+                    </div>
+                    <div class="row index-catalog-cards row-cols-lg-3 row-cols-2 g-lg-4 g-sm-3 g-2 mb-3">
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme2">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic6.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Горизонтальные резервуары
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme2">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic7.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Вертикальные резервуары
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme2">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic6.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Пожарные резервуары
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme2">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic7.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Емкости ЕП и ЕПП
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme2">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic6.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Вертикальные резервуары
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card catalog-card_theme2">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-catalog-pic7.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                    <div class="catalog-card__name">
+                                        Вертикальные резервуары
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="calc-start-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-9 col-12">
+                            <div class="calc-start-wrapper">
+                                <h2 class="text-white">Рассичтайте стоимость и сроки изготовления резервуара в Краснодаре</h2>
+                                <div class="text-warning">Ответьте на 6 вопросов и получите рассчет</div>
+                                <div class="calc-start mt-4">
+                                    <div class="row">
+                                        <div class="col calc-start__title">
+                                            Выберите тип калькулятора
+                                        </div>
+                                    </div>
+                                    <div class="row row-cols-sm-5 row-cols-ssm-3 row-cols-2 g-3 mb-3">
+                                        <div class="col">
+                                            <div class="calc-start-card">
+                                                <input type="radio" class="custom-control-input" id="calcStart1" name=calcStart>
+                                                <label class="custom-control-label" for="calcStart1">
+                                                    <span class="calc-start-card__pic">
+                                                <img src="{% static '/img/general/calc-start1.jpg' %}" alt="">
+                                            </span>
+                                                    <span class="calc-start-card__title">Мини АЗС</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="calc-start-card">
+                                                <input type="radio" class="custom-control-input" id="calcStart2" name=calcStart>
+                                                <label class="custom-control-label" for="calcStart2">
+                                                    <span class="calc-start-card__pic">
+                                                <img src="{% static '/img/general/calc-start2.jpg' %}" alt="">
+                                            </span>
+                                                    <span class="calc-start-card__title">КАЗС открытая</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="calc-start-card">
+                                                <input type="radio" class="custom-control-input" id="calcStart3" name=calcStart>
+                                                <label class="custom-control-label" for="calcStart3">
+                                                    <span class="calc-start-card__pic">
+                                                <img src="{% static '/img/general/calc-start3.jpg' %}" alt="">
+                                            </span>
+                                                    <span class="calc-start-card__title">КАЗС моноблок</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="calc-start-card">
+                                                <input type="radio" class="custom-control-input" id="calcStart4" name=calcStart>
+                                                <label class="custom-control-label" for="calcStart4">
+                                                    <span class="calc-start-card__pic">
+                                                <img src="{% static '/img/general/calc-start4.jpg' %}" alt="">
+                                            </span>
+                                                    <span class="calc-start-card__title">КАЗС закрытая</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="calc-start-card">
+                                                <input type="radio" class="custom-control-input" id="calcStart5" name=calcStart>
+                                                <label class="custom-control-label" for="calcStart5">
+                                                    <span class="calc-start-card__pic">
+                                                <img src="{% static '/img/general/calc-start5.jpg' %}" alt="">
+                                            </span>
+                                                    <span class="calc-start-card__title">Калькулятор РГС</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <a href="#" class="btn btn-danger">Продолжить рассчет</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="{% static '/img/general/calc-pic.png' %}" alt="" class="calc-start-pic">
+            </section>
+
+            <section class="page-part page-part_white">
+                <div class="container mt-4">
+                    <div class="row mb-2">
+                        <div class="col">
+                            <h2>Наше производство</h2>
+                        </div>
+                    </div>
+                    <div class="row index-catalog-cards row-cols-sm-4 row-cols-ssm-3 row-cols-2 g-lg-4 g-sm-3 g-2 mb-5">
+                        <div class="col">
+                            <div class="catalog-card">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-project1.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-project2.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-project3.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-project4.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-project5.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-project6.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-project7.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="catalog-card">
+                                <div class="ratio ratio-16x9">
+                                    <a href="#" class="stretched-link">
+                                        <img src="{% static '/img/content/index-project8.png' %}" alt="" class="catalog-card__cover">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <h2>Лицензии и сертификаты</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="sert-slider-wrapper position-relative mb-5">
+                                <div class="swiper common-slider sertSlider">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="br-image rounded-4 overflow-hidden">
+                                                <a href="{% static '/img/content/sert1.jpg' %}" data-fancybox="sert-gallery">
+                                                    <img src="{% static '/img/content/sert1.jpg' %}" alt="" class="object-fit-cover">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="br-image rounded-4 overflow-hidden">
+                                                <a href="{% static '/img/content/sert2.jpg' %}" data-fancybox="sert-gallery">
+                                                    <img src="{% static '/img/content/sert2.jpg' %}" alt="" class="object-fit-cover">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="br-image rounded-4 overflow-hidden">
+                                                <a href="{% static '/img/content/sert3.jpg' %}" data-fancybox="sert-gallery">
+                                                    <img src="{% static '/img/content/sert3.jpg' %}" alt="" class="object-fit-cover">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="br-image rounded-4 overflow-hidden">
+                                                <a href="{% static '/img/content/sert4.jpg' %}" data-fancybox="sert-gallery">
+                                                    <img src="{% static '/img/content/sert4.jpg' %}" alt="" class="object-fit-cover">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="br-image rounded-4 overflow-hidden">
+                                                <a href="{% static '/img/content/sert5.jpg' %}" data-fancybox="sert-gallery">
+                                                    <img src="{% static '/img/content/sert5.jpg' %}" alt="" class="object-fit-cover">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="br-image rounded-4 overflow-hidden">
+                                                <a href="{% static '/img/content/sert6.jpg' %}" data-fancybox="sert-gallery">
+                                                    <img src="{% static '/img/content/sert6.jpg' %}" alt="" class="object-fit-cover">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="br-image rounded-4 overflow-hidden">
+                                                <a href="{% static '/img/content/sert3.jpg' %}" data-fancybox="sert-gallery">
+                                                    <img src="{% static '/img/content/sert3.jpg' %}" alt="" class="object-fit-cover">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <h2>Нас рекомендуют</h2>
+                        </div>
+                    </div>
+                    <div class="row  row-cols-lg-5 row-cols-md-4 row-cols-ssm-3 row-cols-2 partners-logo mb-5">
+                        <div class="col">
+                            <img src="{% static '/img/content/partner0-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner1-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner2-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner3-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner4-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner5-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner6-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner7-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner8-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner9-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner10-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner11-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner12-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner13-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner14-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner15-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner16-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner17-logo.jpeg' %}" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="{% static '/img/content/partner18-logo.jpeg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <h2>Контакты</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-auto col-12">
+                            <div class="index-contacts">
+                                <h4 class="fw-normal">Контакты</h4>
+                                <div class="hstack mb-3">
+                                    <div class="addr-line__name">
+                                        <svg class="addr-line__icon">
+                                            <use xlink:href="#contact1"></use>
+                                        </svg>
+                                        <span>Адрес:</span>
+                                    </div>
+                                    <div class="addr-line__value">Краснодар, ул. Захарова 10 к.8</div>
+                                </div>
+                                <div class="hstack mb-3">
+                                    <div class="addr-line__name">
+                                        <svg class="addr-line__icon">
+                                            <use xlink:href="#contact2"></use>
+                                        </svg>
+                                        <span>Телефон:</span>
+                                    </div>
+                                    <div class="addr-line__value"><a href="tel:+79180010244">+7 918 0010244</a>
+                                    </div>
+                                </div>
+                                <div class="hstack mb-3">
+                                    <div class="addr-line__name">
+                                        <svg class="addr-line__icon">
+                                            <use xlink:href="#contact3"></use>
+                                        </svg>
+                                        <span>Email:</span>
+                                    </div>
+                                    <div class="addr-line__value"><a href="mailto:info@emrez.ru">info@emrez.ru</a>
+                                    </div>
+                                </div>
+                                <div class="hstack">
+                                    <div class="addr-line__name">
+                                        <svg class="addr-line__icon">
+                                            <use xlink:href="#contact4"></use>
+                                        </svg>
+                                        <span>Время работы:</span>
+                                    </div>
+                                    <div class="addr-line__value">Пн-Пт с 10:00 до 21:00</div>
+                                </div>
+                                <a href="#" class="btn btn-danger mt-5">Скачать реквизиты</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-auto col-12 ms-auto d-lg-block d-none">
+                            <h4 class="fw-normal">Генеральный директор</h4>
+                            <div class="fs-5 text-lg-end">
+                                <span class="d-block">Константинов</span>
+                                <span class="d-block">Валерий</span>
+                                <span class="d-block">Александрович</span>
+                            </div>
+                        </div>
+                        <div class="col-xl-auto col-3 d-lg-block d-none">
+                            <img src="{% static '/img/content/manager.jpg' %}" alt="" class="img-fluid rounded-4">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-part page-part_offer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="fs-1 text-white fw-bold">Коммерческое предложение</div>
+                            <div class="fs-5 text-warning mb-3">Скачайте коммерческое предложение от компании «Емрез»</div>
+                            <a href="#" class="btn btn-danger">Скачать</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-part page-part_white">
+                <div class="container">
+                    <div class="row mb-2">
+                        <div class="col">
+                            <h2>Как добраться</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="rounded-4 overflow-hidden">
+                                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adbdfcdb04d588a2d0dee250f7f13c26056c8abbff52de1f167b02bf0f27eea59&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="page__buffer"></div>
+
+        </div>
+
+        <footer class="page__footer">
+            <div class="footer">
+                <div class="container">
+                    <div class="row footer_top">
+                        <div class="col-xl-3 col-ssm-6 col-12 mt-xl-0 mt-4 order-xl-1 order-ssm-2 order-3">
+                            <div class="footer-logo position-relative">
+                                <div class="mb-2">
+                                    <svg class="navbar-brand__icon">
+                                        <use xlink:href="#logo"></use>
+                                    </svg>
+                                </div>
+                                <a href="/" class="navbar-brand__name stretched-link">
+                                    <span class="d-block">Завод резервуаров</span>
+                                    <span class="d-block">ёмкостного оборудования</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl col-12 order-xl-2 order-1">
+                            <div class="row row-cols-ssm-3 row-cols-1">
+                                <div class="col mb-ssm-0 mb-4">
+                                    <div class="footer-menu">
+                                        <div class="footer-menu__title mb-3">
+                                            Каталог
+                                        </div>
+                                        <div class="footer-menu__list">
+                                            <div class="mb-2 vstack">
+                                                <a href="#">Все резервуары</a>
+                                                <a href="#">Горизонтальные резервуары</a>
+                                                <a href="#">Вертикальные резервуары</a>
+                                            </div>
+                                            <div class="mb-2 vstack">
+                                                <a href="#">Все АЗС</a>
+                                                <a href="#">Модульные АЗС</a>
+                                                <a href="#">Мини АЗС</a>
+                                                <a href="#">КАЗС</a>
+                                            </div>
+                                            <div class="mb-2 vstack">
+                                                <a href="#">Силосы</a>
+                                                <a href="#">Водонапорные башни</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col mb-ssm-0 mb-4">
+                                    <div class="footer-menu">
+                                        <div class="footer-menu__title mb-3">
+                                            Компания
+                                        </div>
+                                        <div class="footer-menu__list">
+                                            <div class="mb-2 vstack">
+                                                <a href="{% url 'about_us' %}">О заводе</a>
+                                                <a href="#">Каталог</a>
+                                                <a href="#">Проектирование</a>
+                                                <a href="#">Опросные листы</a>
+                                                <a href="#">Калькуляторы</a>
+                                                <a href="{% url 'contacts' %}">Контакты</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col mb-ssm-0 mb-4">
+                                    <div class="footer-menu">
+                                        <div class="footer-menu__title mb-3">
+                                            Контакты
+                                        </div>
+                                        <div class="index-contacts index-contacts_footer">
+
+                                            <div class="hstack mb-3">
+                                                <div class="addr-line__name">
+                                                    <svg class="addr-line__icon">
+                                                        <use xlink:href="#contact1"></use>
+                                                    </svg>
+
+                                                </div>
+                                                <div class="addr-line__value">Краснодар, ул. Захарова 10 к.8</div>
+                                            </div>
+                                            <div class="hstack mb-3">
+                                                <div class="addr-line__name">
+                                                    <svg class="addr-line__icon">
+                                                        <use xlink:href="#contact2"></use>
+                                                    </svg>
+
+                                                </div>
+                                                <div class="addr-line__value"><a href="tel:+79180010244">+7 918 0010244</a>
+                                                </div>
+                                            </div>
+                                            <div class="hstack mb-3">
+                                                <div class="addr-line__name">
+                                                    <svg class="addr-line__icon">
+                                                        <use xlink:href="#contact3"></use>
+                                                    </svg>
+
+                                                </div>
+                                                <div class="addr-line__value"><a href="mailto:info@emrez.ru">info@emrez.ru</a>
+                                                </div>
+                                            </div>
+                                            <div class="hstack">
+                                                <div class="addr-line__name">
+                                                    <svg class="addr-line__icon">
+                                                        <use xlink:href="#contact4"></use>
+                                                    </svg>
+
+                                                </div>
+                                                <div class="addr-line__value">Пн-Пт с 10:00 до 21:00</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-ssm-6 col-12 text-ssm-end mt-xl-0 mt-4 order-xl-2 order-ssm-3 order-2">
+                            <a href="#" class="btn btn-danger mb-3">Запросить цену</a>
+                            <a href="#" class="btn btn-danger mb-3">Скачать реквизиты</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bottom-panel bg-dark py-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-ssm col-12">
+                                <span class="text-info me-2">2023 © Емрез</span>  <span>Производство резервуаров и ёмкостного оборудования</span>
+                            </div>
+                            <div class="col-ssm-auto col-12">
+                                <a href="#">Политика конфиденциальности</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+        <!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
+        <script src="{% static '/js/main.js' %}"></script>
+
+        <script>
+            var swiper = new Swiper(".sertSlider", {
+                slidesPerView: 2,
+                spaceBetween: 20,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                450: {
+                    slidesPerView: 3,
+                        spaceBetween: 20,
+                },
+                600: {
+                    slidesPerView: 4,
+                        spaceBetween: 20,
+                },
+                1050: {
+                    slidesPerView: 5,
+                        spaceBetween: 20,
+                },
+                1240: {
+                    slidesPerView: 6,
+                        spaceBetween: 20,
+                },
+            },
+            });
+        </script>
+
+        <div class="modal fade" id="cityModal" tabindex="-1" aria-labelledby="cityModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h1 class="modal-title fs-5" id="cityModalLabel">Выбор города</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <select class="form-select border-0" aria-label="Выбор города">
+                            <option selected>Выберите ваш город</option>
+                            <option value="1">Краснодар</option>
+                            <option value="2">Москва</option>
+                            <option value="3">Санкт-Перербург</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Отмена</button>
+                        <button type="button" class="btn btn-danger">Выбрать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

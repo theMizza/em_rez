@@ -1,0 +1,490 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="ru">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>default title</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta content="telephone=no" name="format-detection">
+        <!-- This make sence for mobile browsers. It means, that content has been optimized for mobile browsers -->
+        <meta name="HandheldFriendly" content="true">
+
+
+        <!--[if (gt IE 9)|!(IE)]><!-->
+        <link href="{% static '/css/main.css' %}" rel="stylesheet" type="text/css">
+        <!--<![endif]-->
+
+        <meta property="og:title" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:description" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="500" />
+        <meta property="og:image:height" content="300" />
+        <meta property="twitter:description" content="" />
+        <link rel="image_src" href="" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <script>
+            (function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)
+        </script>
+
+
+        <script src="{% static '/js/separate-js/svg-inject.js' %}"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9.2.4/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/imask@6.6.0/dist/imask.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/imask@6.6.1/dist/imask.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9.2.4/swiper-bundle.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+    </head>
+
+    <body class="page">
+
+
+        <div class="page__wrapper">
+
+            <section class="page-header">
+                <div class="container-fluid top-panel-wrapper">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row top-panel">
+                                <div class="col-auto city-choice">
+                                    Ваш город: <a href="#" class="link-dotted" data-bs-toggle="modal" data-bs-target="#cityModal">Краснодар</a>
+                                </div>
+                                <div class="col-auto city-address d-lg-block d-none">
+                                    Адрес: <span class="text-info">ул. Захарова 10 корпус 8 (территория завода им.Седина).</span>  <span class="city-address__schedule">пн.-сб.: 9:00-20:00</span>
+                                </div>
+                                <div class="col d-sm-block d-none">
+                                    <nav class="nav top-panel__nav justify-content-end">
+                                        <a class="nav-link" href="#">Сертификаты</a>
+                                        <a class="nav-link" href="#">Лицензии</a>
+                                        <a class="nav-link" href="#">Оплата</a>
+                                        <a class="nav-link" href="#">Доставка</a>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="common-header-wrapper">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <nav class="navbar navbar-dark navbar-expand-lg">
+                                    <a class="navbar-brand py-0" href="{% url 'home_page' %}">
+                                        <svg class="navbar-brand__icon">
+                                            <use xlink:href="#logo"></use>
+                                        </svg>
+                                        <span class="navbar-brand__name d-xxl-block d-lg-none d-block">
+                                    <span class="d-block">Завод резервуаров</span><span class="d-block">ёмкостного оборудования</span>
+                                        </span>
+                                    </a>
+                                    <div class="vr ms-4 me-3 d-xxl-block d-none"></div>
+                                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse main-menu" id="navbarMain">
+                                        <ul class="navbar-nav mb-lg-0 mb-3">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{% url 'about_us' %}">О заводе</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Каталог</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Проектирование</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Опросные листы</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link nav-link_marked" href="#">Калькулятор</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
+                                            </li>
+                                        </ul>
+                                        <div class="d-sm-none d-block border-top border-secondary pt-3 mb-4">
+                                            <nav class="nav vstack">
+                                                <a class="nav-link" href="#">Сертификаты</a>
+                                                <a class="nav-link" href="#">Лицензии</a>
+                                                <a class="nav-link" href="#">Оплата</a>
+                                                <a class="nav-link" href="#">Доставка</a>
+                                            </nav>
+                                        </div>
+                                        <div class="vr me-4 ms-3 d-lg-block d-none"></div>
+                                        <div class="head-contacts mb-lg-0 mb-4">
+                                            <div class="head-phone">
+                                                <div class="head-phone__icon">
+                                                    <svg>
+                                                        <use xlink:href="#phone"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="head-phone__content">
+                                                    <div class="head-phone__num text-nowrap"><a href="tel:+79180010244" class="text-white text-decoration-none">+7 918 001-02-44</a>
+                                                    </div>
+                                                    <div class="head-phone__link"><a href="" data-bs-toggle="modal" data-bs-target="#cityModal">Заказать звонок</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="head-mail d-xxl-flex d-lg-none d-flex justify-content-start">
+                                                <div class="head-mail__icon">
+                                                    <svg>
+                                                        <use xlink:href="#mail"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="head-mail__content">
+                                                    <a href="mailto:info@emrez.ru">info@emrez.ru</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-danger border-0 ms-auto" type="submit">Запросить цену</button>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-part page-part_inside-first page-part_white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="breadcrumb-wrapper mb-3">
+                                <a href="#" class="breadcrumb-back-link">
+                                    <svg>
+                                        <use xlink:href="#back"></use>
+                                    </svg>
+                                </a>
+<!--                                <div class="breadcrumb-container">-->
+<!--                                    <ol class="breadcrumb">-->
+<!--                                        <li class="breadcrumb-item"><a href="#">Главная</a>-->
+<!--                                        </li>-->
+<!--                                        <li class="breadcrumb-item"><a href="#">Каталог завода</a>-->
+<!--                                        </li>-->
+<!--                                        <li class="breadcrumb-item"><a href="#">Горизонтальные резервуары</a>-->
+<!--                                        </li>-->
+<!--                                        <li class="breadcrumb-item active" aria-current="page">Резервуар РГС 35 м3</li>-->
+<!--                                    </ol>-->
+<!--                                </div>-->
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <h2>Контакты</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xxl-4 d-xxl-block d-ssm-none d-block mb-4">
+                            <div class="ratio ratio-4x3 overflow-hidden rounded-4">
+                                <img src="{% static '/img/content/service-pic1.jpg' %}" alt="" class="img-fluid object-fit-cover">
+                            </div>
+                        </div>
+                        <div class="col-xxl-8 col-12">
+                            <div class="row row-cols-md-4 row-cols-ssm-2 row-cols-1 g-3 mb-3">
+                                <div class="col contact-part-wrapper">
+                                    <div class="ratio ratio-16x9 bg-light rounded-4 adv-card__icon">
+                                        <svg>
+                                            <use xlink:href="#contact5"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="contact-part">
+                                        <div class="contact-part__name">Адрес</div>
+                                        <div class="contact-part__list">
+                                            Краснодар, ул.Захарова 10, к.8 <span class="d-block">(территория завода им. Седина)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col contact-part-wrapper">
+                                    <div class="ratio ratio-16x9 bg-light rounded-4 adv-card__icon">
+                                        <svg>
+                                            <use xlink:href="#contact6"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="contact-part">
+                                        <div class="contact-part__name">Телефоны</div>
+                                        <div class="contact-part__list">
+                                            <span class="d-block">+7 918 001-02-44 — отдел продаж</span>
+                                            <span class="d-block">+7 918 973-56-59 — производство</span>
+                                            <span class="d-block">+7 918 942-52-95 — бухгалтер</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col contact-part-wrapper">
+                                    <div class="ratio ratio-16x9 bg-light rounded-4 adv-card__icon">
+                                        <svg>
+                                            <use xlink:href="#contact7"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="contact-part">
+                                        <div class="contact-part__name">Email</div>
+                                        <div class="contact-part__list">
+                                            <span class="d-block"><a href="mailto:info@emrez.ru">info@emrez.ru</a> — общая</span>
+                                            <span class="d-block"><a href="mailto:gplehanov@me.com — отдел закупок">gplehanov@me.com</a> — отдел закупок</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col contact-part-wrapper">
+                                    <div class="ratio ratio-16x9 bg-light rounded-4 adv-card__icon">
+                                        <svg>
+                                            <use xlink:href="#contact8"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="contact-part">
+                                        <div class="contact-part__name">График работы</div>
+                                        <div class="contact-part__list">
+                                            Пн.-Сб. с 8:00 до 19:00
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col">
+                                    <div class="h3">Как добраться</div>
+                                    <p>ООО &laquo;ЁмкостьСтрой&raquo; уже на&nbsp;протяжении 10&nbsp;лет занимается производством емкостей и&nbsp;резервуаров для разных отраслей промышленности. Продукцию наших заводов приобретают не&nbsp;только отечественные
+                                        компании, но&nbsp;и&nbsp;предприятия из&nbsp;стран ближнего и&nbsp;дальнего зарубежья.</p>
+                                    <p>Накоплен реальный опыт в&nbsp;условиях постоянно меняющихся бизнес реалий. Мы&nbsp;уверены в&nbsp;качестве выпускаемых емкостей и&nbsp;резервуаров. Наша уверенность подкреплена полным списком сертификатов на&nbsp;весь
+                                        ассортимент предлагаемых товаров.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-part page-part_service">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-md-7 col-12 consult-block__content">
+                            <div class="h2 text-white">Обратный звонок</div>
+                            <div class="text-warning mb-4">
+                                <p>Оставьте ваш телефон в форме ниже и мы свяжемся с вами для рассчета точной стоимости изготовления и обслуживания изделия.</p>
+                            </div>
+                            <form action="">
+                                <div class="consult-form">
+                                    <div class="row mb-3">
+                                        <div class="col-ssm-8 col-12">
+                                            <input type="text" class="form-control" id="consultFormPhone100" placeholder="Телефон для связи" aria-label="Телефон для связи">
+                                            <script>
+                                                var element = document.getElementById('consultFormPhone100');
+                                                var maskOptions = {
+                                                    mask: '+{7} (000) 000-00-00',
+                                                    lazy: false
+                                                };
+                                                var mask = IMask(element, maskOptions);
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <button type="submit" class="btn btn-danger">Перезвоните мне</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-part page-part_white">
+                <div class="container">
+                    <div class="row mb-2">
+                        <div class="col">
+                            <h2>Как добраться</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="rounded-4 overflow-hidden">
+                                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adbdfcdb04d588a2d0dee250f7f13c26056c8abbff52de1f167b02bf0f27eea59&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="page__buffer"></div>
+
+        </div>
+
+        <footer class="page__footer">
+            <div class="footer">
+                <div class="container">
+                    <div class="row footer_top">
+                        <div class="col-xl-3 col-ssm-6 col-12 mt-xl-0 mt-4 order-xl-1 order-ssm-2 order-3">
+                            <div class="footer-logo position-relative">
+                                <div class="mb-2">
+                                    <svg class="navbar-brand__icon">
+                                        <use xlink:href="#logo"></use>
+                                    </svg>
+                                </div>
+                                <a href="/" class="navbar-brand__name stretched-link">
+                                    <span class="d-block">Завод резервуаров</span>
+                                    <span class="d-block">ёмкостного оборудования</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl col-12 order-xl-2 order-1">
+                            <div class="row row-cols-ssm-3 row-cols-1">
+                                <div class="col mb-ssm-0 mb-4">
+                                    <div class="footer-menu">
+                                        <div class="footer-menu__title mb-3">
+                                            Каталог
+                                        </div>
+                                        <div class="footer-menu__list">
+                                            <div class="mb-2 vstack">
+                                                <a href="#">Все резервуары</a>
+                                                <a href="#">Горизонтальные резервуары</a>
+                                                <a href="#">Вертикальные резервуары</a>
+                                            </div>
+                                            <div class="mb-2 vstack">
+                                                <a href="#">Все АЗС</a>
+                                                <a href="#">Модульные АЗС</a>
+                                                <a href="#">Мини АЗС</a>
+                                                <a href="#">КАЗС</a>
+                                            </div>
+                                            <div class="mb-2 vstack">
+                                                <a href="#">Силосы</a>
+                                                <a href="#">Водонапорные башни</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col mb-ssm-0 mb-4">
+                                    <div class="footer-menu">
+                                        <div class="footer-menu__title mb-3">
+                                            Компания
+                                        </div>
+                                        <div class="footer-menu__list">
+                                            <div class="mb-2 vstack">
+                                                <a href="{% url 'about_us' %}">О заводе</a>
+                                                <a href="#">Каталог</a>
+                                                <a href="#">Проектирование</a>
+                                                <a href="#">Опросные листы</a>
+                                                <a href="#">Калькуляторы</a>
+                                                <a href="{% url 'contacts' %}">Контакты</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col mb-ssm-0 mb-4">
+                                    <div class="footer-menu">
+                                        <div class="footer-menu__title mb-3">
+                                            Контакты
+                                        </div>
+                                        <div class="index-contacts index-contacts_footer">
+
+                                            <div class="hstack mb-3">
+                                                <div class="addr-line__name">
+                                                    <svg class="addr-line__icon">
+                                                        <use xlink:href="#contact1"></use>
+                                                    </svg>
+
+                                                </div>
+                                                <div class="addr-line__value">Краснодар, ул. Захарова 10 к.8</div>
+                                            </div>
+                                            <div class="hstack mb-3">
+                                                <div class="addr-line__name">
+                                                    <svg class="addr-line__icon">
+                                                        <use xlink:href="#contact2"></use>
+                                                    </svg>
+
+                                                </div>
+                                                <div class="addr-line__value"><a href="tel:+79180010244">+7 918 0010244</a>
+                                                </div>
+                                            </div>
+                                            <div class="hstack mb-3">
+                                                <div class="addr-line__name">
+                                                    <svg class="addr-line__icon">
+                                                        <use xlink:href="#contact3"></use>
+                                                    </svg>
+
+                                                </div>
+                                                <div class="addr-line__value"><a href="mailto:info@emrez.ru">info@emrez.ru</a>
+                                                </div>
+                                            </div>
+                                            <div class="hstack">
+                                                <div class="addr-line__name">
+                                                    <svg class="addr-line__icon">
+                                                        <use xlink:href="#contact4"></use>
+                                                    </svg>
+
+                                                </div>
+                                                <div class="addr-line__value">Пн-Пт с 10:00 до 21:00</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-ssm-6 col-12 text-ssm-end mt-xl-0 mt-4 order-xl-2 order-ssm-3 order-2">
+                            <a href="#" class="btn btn-danger mb-3">Запросить цену</a>
+                            <a href="#" class="btn btn-danger mb-3">Скачать реквизиты</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bottom-panel bg-dark py-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-ssm col-12">
+                                <span class="text-info me-2">2023 © Емрез</span>  <span>Производство резервуаров и ёмкостного оборудования</span>
+                            </div>
+                            <div class="col-ssm-auto col-12">
+                                <a href="#">Политика конфиденциальности</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+        <!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
+        <script src="{% static '/js/main.js' %}"></script>
+
+        <div class="modal fade" id="cityModal" tabindex="-1" aria-labelledby="cityModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h1 class="modal-title fs-5" id="cityModalLabel">Выбор города</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <select class="form-select border-0" aria-label="Выбор города">
+                            <option selected>Выберите ваш город</option>
+                            <option value="1">Краснодар</option>
+                            <option value="2">Москва</option>
+                            <option value="3">Санкт-Перербург</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Отмена</button>
+                        <button type="button" class="btn btn-danger">Выбрать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
