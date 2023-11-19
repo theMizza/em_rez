@@ -1,8 +1,7 @@
 from django.urls import path
-from .views import index, about, contacts
+from .views import index, static_page_handler
 
 urlpatterns = [
     path('', index, name='home_page'),
-    path('about_us/', about, name='about_us'),
-    path('contacts/', contacts, name='contacts')
+    path('<str:slug>/', static_page_handler)
 ]

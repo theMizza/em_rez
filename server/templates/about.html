@@ -86,7 +86,7 @@
                         <div class="row">
                             <div class="col">
                                 <nav class="navbar navbar-dark navbar-expand-lg">
-                                    <a class="navbar-brand py-0" href="{% url 'home_page' %}">
+                                    <a class="navbar-brand py-0" href="/">
                                         <svg class="navbar-brand__icon">
                                             <use xlink:href="#logo"></use>
                                         </svg>
@@ -101,7 +101,7 @@
                                     <div class="collapse navbar-collapse main-menu" id="navbarMain">
                                         <ul class="navbar-nav mb-lg-0 mb-3">
                                             <li class="nav-item">
-                                                <a class="nav-link" href="{% url 'about_us' %}">О заводе</a>
+                                                <a class="nav-link" href="/about_us/">О заводе</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link" href="#">Каталог</a>
@@ -116,7 +116,7 @@
                                                 <a class="nav-link nav-link_marked" href="#">Калькулятор</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
+                                                <a class="nav-link" href="/contacts/">Контакты</a>
                                             </li>
                                         </ul>
                                         <div class="d-sm-none d-block border-top border-secondary pt-3 mb-4">
@@ -188,7 +188,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <h2>О заводе «ЕМРЕЗ»</h2>
+                            <h2>{{ title }}</h2>
                         </div>
                     </div>
                     <div class="row mb-5 about-intro">
@@ -323,55 +323,17 @@
                             <div class="sert-slider-wrapper position-relative mb-5">
                                 <div class="swiper common-slider sertSlider">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="br-image rounded-4 overflow-hidden">
-                                                <a href="{% static '/img/content/sert1.jpg' %}" data-fancybox="sert-gallery">
-                                                    <img src="{% static '/img/content/sert1.jpg' %}" alt="" class="object-fit-cover">
-                                                </a>
+                                        {% for sertificate in sertificates %}
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="br-image rounded-4 overflow-hidden">
+                                                        <a href="{{ sertificate.file.url }}" data-fancybox="sert-gallery">
+                                                            <img src="{{ sertificate.file.url }}" alt="" class="object-fit-cover">
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="br-image rounded-4 overflow-hidden">
-                                                <a href="{% static '/img/content/sert2.jpg' %}" data-fancybox="sert-gallery">
-                                                    <img src="{% static '/img/content/sert2.jpg' %}" alt="" class="object-fit-cover">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="br-image rounded-4 overflow-hidden">
-                                                <a href="{% static '/img/content/sert3.jpg' %}" data-fancybox="sert-gallery">
-                                                    <img src="{% static '/img/content/sert3.jpg' %}" alt="" class="object-fit-cover">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="br-image rounded-4 overflow-hidden">
-                                                <a href="{% static '/img/content/sert4.jpg' %}" data-fancybox="sert-gallery">
-                                                    <img src="{% static '/img/content/sert4.jpg' %}" alt="" class="object-fit-cover">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="br-image rounded-4 overflow-hidden">
-                                                <a href="{% static '/img/content/sert5.jpg' %}" data-fancybox="sert-gallery">
-                                                    <img src="{% static '/img/content/sert5.jpg' %}" alt="" class="object-fit-cover">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="br-image rounded-4 overflow-hidden">
-                                                <a href="{% static '/img/content/sert6.jpg' %}" data-fancybox="sert-gallery">
-                                                    <img src="{% static '/img/content/sert6.jpg' %}" alt="" class="object-fit-cover">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="br-image rounded-4 overflow-hidden">
-                                                <a href="{% static '/img/content/sert3.jpg' %}" data-fancybox="sert-gallery">
-                                                    <img src="{% static '/img/content/sert3.jpg' %}" alt="" class="object-fit-cover">
-                                                </a>
-                                            </div>
-                                        </div>
+                                        {% endfor %}
                                     </div>
                                 </div>
                                 <div class="swiper-button-next"></div>
@@ -708,12 +670,12 @@
                                         </div>
                                         <div class="footer-menu__list">
                                             <div class="mb-2 vstack">
-                                                <a href="{% url 'about_us' %}">О заводе</a>
+                                                <a href="/about_us/">О заводе</a>
                                                 <a href="#">Каталог</a>
                                                 <a href="#">Проектирование</a>
                                                 <a href="#">Опросные листы</a>
                                                 <a href="#">Калькуляторы</a>
-                                                <a href="{% url 'contacts' %}">Контакты</a>
+                                                <a href="/contacts/">Контакты</a>
                                             </div>
                                         </div>
                                     </div>
